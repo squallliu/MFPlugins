@@ -3,7 +3,7 @@ import { load } from "cheerio";
 
 const pageSize = 20;
 
-const validMusicFilter = (_) => _.privilege === 0 || _.privilege === 8;
+const validMusicFilter = (_) => true; // _.privilege === 0 || _.privilege === 8;
 
 function formatMusicItem(_) {
   return {

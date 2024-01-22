@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
 const cheerio_1 = require("cheerio");
 const pageSize = 20;
-const validMusicFilter = (_) => _.privilege === 0 || _.privilege === 8;
+const validMusicFilter = (_) => true;
 function formatMusicItem(_) {
     var _a, _b, _c, _d, _e, _f, _g;
     return {

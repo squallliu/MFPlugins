@@ -40,11 +40,11 @@ function formatArtistItem(_) {
 }
 
 function paidAlbumFilter(raw) {
-  return !raw.priceTypes?.length;
+  return true; // !raw.priceTypes?.length;
 }
 
 function paidMusicFilter(raw) {
-  return raw.tag === 0 || raw.isPaid === false || parseFloat(raw.price) === 0;
+  return true; // raw.tag === 0 || raw.isPaid === false || parseFloat(raw.price) === 0;
 }
 
 async function searchBase(query: string, page: number, core: string) {

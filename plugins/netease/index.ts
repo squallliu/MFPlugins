@@ -377,7 +377,7 @@ async function getValidMusicItems(trackIds) {
       )
     ).data;
     const validMusicItems = songDetails.songs
-      // .filter((_) => _.fee === 0 || _.fee === 8)
+      .filter((_) => musicCanPlayFilter(_))
       .map(formatMusicItem);
     return validMusicItems;
   } catch (e) {

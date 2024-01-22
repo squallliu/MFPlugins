@@ -40,11 +40,10 @@ function formatArtistItem(_) {
     };
 }
 function paidAlbumFilter(raw) {
-    var _a;
-    return !((_a = raw.priceTypes) === null || _a === void 0 ? void 0 : _a.length);
+    return true;
 }
 function paidMusicFilter(raw) {
-    return raw.tag === 0 || raw.isPaid === false || parseFloat(raw.price) === 0;
+    return true;
 }
 async function searchBase(query, page, core) {
     return (await axios_1.default.get("https://www.ximalaya.com/revision/search/main", {

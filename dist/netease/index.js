@@ -309,6 +309,7 @@ async function getValidMusicItems(trackIds) {
         const validTrackIds = res.data.filter((_) => _.url).map((_) => _.id);
         const songDetails = (await axios_1.default.get(`https://music.163.com/api/song/detail/?id=${validTrackIds[0]}&ids=[${validTrackIds.join(",")}]`, { headers })).data;
         const validMusicItems = songDetails.songs
+            .filter((_) => musicCanPlayFilter(_))
             .map(formatMusicItem);
         return validMusicItems;
     }

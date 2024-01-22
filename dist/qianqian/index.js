@@ -59,7 +59,7 @@ function formatArtistItem(_) {
     };
 }
 function musicCanPlayFilter(_) {
-    return !_.isVip;
+    return true;
 }
 async function searchBase(query, page, type) {
     const res = await axios_1.default.get("https://music.91q.com/v1/search", {

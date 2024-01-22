@@ -69,7 +69,7 @@ function formatArtistItem(_) {
 }
 
 function musicCanPlayFilter(_) {
-  return !_.isVip;
+  return true; // !_.isVip;
 }
 
 async function searchBase(query, page, type) {

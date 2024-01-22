@@ -123,7 +123,7 @@ async function searchLyric(query, page) {
   };
 }
 
-searchLyric('夜曲', 1).then(console.log);
+// searchLyric('夜曲', 1).then(console.log);
 
 async function getArtistAlbumWorks(artistItem, page) {
   const headers = {
