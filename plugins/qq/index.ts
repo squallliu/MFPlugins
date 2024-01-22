@@ -104,7 +104,7 @@ async function searchMusic(query, page) {
 
   return {
     isEnd: songs.isEnd,
-    data: songs.data.filter(validSongFilter).map(formatMusicItem),
+    data: songs.data.map(formatMusicItem),
   };
 }
 
@@ -300,7 +300,6 @@ async function getAlbumInfo(albumItem) {
   ).data;
   return {
     musicList: res.albumSonglist.data.songList
-      .filter((_) => validSongFilter(_.songInfo))
       .map((item) => {
         const _ = item.songInfo;
         return formatMusicItem(_);
@@ -342,7 +341,7 @@ async function getArtistSongs(artistItem, page) {
   ).data;
   return {
     isEnd: res.singer.data.total_song <= page * pageSize,
-    data: res.singer.data.songlist.filter(validSongFilter).map(formatMusicItem),
+    data: res.singer.data.songlist.map(formatMusicItem),
   };
 }
 
@@ -455,7 +454,7 @@ async function importMusicSheet(urlLike) {
   const res = JSON.parse(
     result.replace(/callback\(|MusicJsonCallback\(|jsonCallback\(|\)$/g, "")
   );
-  return res.cdlist[0].songlist.filter(validSongFilter).map(formatMusicItem);
+  return res.cdlist[0].songlist.map(formatMusicItem);
 }
 
 /// 榜单
@@ -497,7 +496,6 @@ async function getTopListDetail(topListItem: IMusicSheet.IMusicSheetItem) {
   return {
     ...topListItem,
     musicList: res.data.detail.data.songInfoList
-      .filter(validSongFilter)
       .map(formatMusicItem),
   };
 }
@@ -586,7 +584,7 @@ async function getMusicSheetInfo(sheet: IMusicSheet.IMusicSheetItem, page) {
 module.exports = {
   platform: "QQ音乐",
   author: "猫头猫",
-  version: "0.2.2-alpha.3",
+  version: "0.2.3",
   srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/qq/index.js",
   cacheControl: "no-cache",
   hints: {

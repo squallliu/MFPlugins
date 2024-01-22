@@ -91,7 +91,7 @@ async function searchMusic(query, page) {
     const songs = await searchBase(query, page, 0);
     return {
         isEnd: songs.isEnd,
-        data: songs.data.filter(validSongFilter).map(formatMusicItem),
+        data: songs.data.map(formatMusicItem),
     };
 }
 async function searchAlbum(query, page) {
@@ -261,7 +261,6 @@ async function getAlbumInfo(albumItem) {
     })).data;
     return {
         musicList: res.albumSonglist.data.songList
-            .filter((_) => validSongFilter(_.songInfo))
             .map((item) => {
             const _ = item.songInfo;
             return formatMusicItem(_);
@@ -296,7 +295,7 @@ async function getArtistSongs(artistItem, page) {
     })).data;
     return {
         isEnd: res.singer.data.total_song <= page * pageSize,
-        data: res.singer.data.songlist.filter(validSongFilter).map(formatMusicItem),
+        data: res.singer.data.songlist.map(formatMusicItem),
     };
 }
 async function getArtistAlbums(artistItem, page) {
@@ -380,7 +379,7 @@ async function importMusicSheet(urlLike) {
         withCredentials: true,
     })).data;
     const res = JSON.parse(result.replace(/callback\(|MusicJsonCallback\(|jsonCallback\(|\)$/g, ""));
-    return res.cdlist[0].songlist.filter(validSongFilter).map(formatMusicItem);
+    return res.cdlist[0].songlist.map(formatMusicItem);
 }
 async function getTopLists() {
     const list = await (0, axios_1.default)({
@@ -415,7 +414,6 @@ async function getTopListDetail(topListItem) {
         withCredentials: true,
     });
     return Object.assign(Object.assign({}, topListItem), { musicList: res.data.detail.data.songInfoList
-            .filter(validSongFilter)
             .map(formatMusicItem) });
 }
 async function getRecommendSheetTags() {
@@ -486,7 +484,7 @@ async function getMusicSheetInfo(sheet, page) {
 module.exports = {
     platform: "QQ音乐",
     author: "猫头猫",
-    version: "0.2.2-alpha.3",
+    version: "0.2.3",
     srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/qq/index.js",
     cacheControl: "no-cache",
     hints: {
