@@ -487,7 +487,7 @@ module.exports = {
     platform: "QQ音乐",
     author: "猫头猫",
     version: "0.2.2-alpha.3",
-    srcUrl: "https://github.com/squallliu/MusicFreePlugins/raw/master/dist/qq/index.js",
+    srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/qq/index.js",
     cacheControl: "no-cache",
     hints: {
         importMusicSheet: [

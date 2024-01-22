@@ -313,7 +313,7 @@ async function importMusicSheet(urlLike: string) {
     return;
   }
 
-  // 参考：https://github.com/GitHub-ZC/wp_MusicApi/commit/4481ed88175912c5dc077bcbd4041539f6029cc8#diff-42a836c68ab33c9d21ac9343e2f28f5a958e31f3a563a76a2103eb97c92e4155
+  // 参考：https://mirror.ghproxy.com/https://raw.githubusercontent.com/GitHub-ZC/wp_MusicApi/commit/4481ed88175912c5dc077bcbd4041539f6029cc8#diff-42a836c68ab33c9d21ac9343e2f28f5a958e31f3a563a76a2103eb97c92e4155
   let res = await axios.post(`http://t.kugou.com/command/`, {
     appid: 1001,
     clientver: 9020,
@@ -398,7 +398,7 @@ module.exports = {
   version: "0.1.5",
   author: '猫头猫',
   appVersion: ">0.1.0-alpha.0",
-  srcUrl: "https://github.com/squallliu/MusicFreePlugins/raw/master/dist/kugou/index.js",
+  srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/kugou/index.js",
   cacheControl: "no-cache",
   primaryKey: ["id", "album_id", "album_audio_id"],
   hints: {

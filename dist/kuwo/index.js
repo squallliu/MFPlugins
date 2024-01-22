@@ -467,7 +467,7 @@ module.exports = {
     author: '猫头猫',
     version: "0.1.7",
     appVersion: ">0.1.0-alpha.0",
-    srcUrl: "https://github.com/squallliu/MusicFreePlugins/raw/master/dist/kuwo/index.js",
+    srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/kuwo/index.js",
     cacheControl: "no-cache",
     hints: {
         importMusicSheet: [

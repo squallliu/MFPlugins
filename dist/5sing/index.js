@@ -301,7 +301,7 @@ async function getTopListDetail(topListItem) {
 module.exports = {
     platform: "5sing",
     version: "0.1.2",
-    srcUrl: "https://github.com/squallliu/MusicFreePlugins/raw/master/dist/5sing/index.js",
+    srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/5sing/index.js",
     cacheControl: "no-cache",
     author: '猫头猫',
     supportedSearchType: ["music", "album", "artist",],

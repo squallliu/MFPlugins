@@ -2,14 +2,14 @@ import axios from "axios";
 
 const pageSize = 20;
 
-function formatMusicItem(it){
-    return {
-        id: it.photo.id,
-        title: it.photo.caption,
-        artist: it.author.name,
-        artwork: it.photo.coverUrl || it.photo.photoUrl,
-        manifest: it.photo.manifest
-    }
+function formatMusicItem(it) {
+  return {
+    id: it.photo.id,
+    title: it.photo.caption,
+    artist: it.author.name,
+    artwork: it.photo.coverUrl || it.photo.photoUrl,
+    manifest: it.photo.manifest
+  }
 }
 
 async function searchMusic(query, page) {
@@ -134,7 +134,7 @@ async function searchMusic(query, page) {
   const result = (await axios.post("https://www.kuaishou.com/graphql", body)).data.data.visionSearchPhoto;
   return {
     isEnd: !result?.pcursor || result?.pcursor === 'no_more',
-    data: result?.feeds?.map?.(formatMusicItem) 
+    data: result?.feeds?.map?.(formatMusicItem)
   }
 }
 
@@ -143,8 +143,7 @@ module.exports = {
   platform: "快手",
   version: "0.0.1",
   author: '猫头猫',
-  srcUrl:
-    "https://gitee.com/maotoumao/MusicFreePlugins/raw/v0.1/dist/kuaishou/index.js",
+  srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/kuaishou/index.js",
   cacheControl: "no-cache",
   supportedSearchType: ["music"],
   async search(query, page, type) {
@@ -153,13 +152,13 @@ module.exports = {
     }
   },
   async getMediaSource(musicItem, quality: IMusic.IQualityKey) {
-    if(!musicItem.manifest) {
-        return;
+    if (!musicItem.manifest) {
+      return;
     }
     const adaptationSet = musicItem.manifest.adaptationSet;
     const representation = adaptationSet[0].representation;
     return {
-        url: representation[0].url
+      url: representation[0].url
     };
 
   },

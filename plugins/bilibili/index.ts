@@ -16,11 +16,11 @@ let cookie;
 async function getCid(bvid, aid) {
   const params = bvid
     ? {
-        bvid: bvid,
-      }
+      bvid: bvid,
+    }
     : {
-        aid: aid,
-      };
+      aid: aid,
+    };
   const cidRes = (
     await axios.get("https://api.bilibili.com/x/web-interface/view?%s", {
       headers: headers,
@@ -213,9 +213,9 @@ function getRid(params) {
     let [h, p] = [l[d], params[l[d]]];
     p && "string" == typeof p && (p = p.replace(u, "")),
       null != p &&
-        c.push(
-          "".concat(encodeURIComponent(h), "=").concat(encodeURIComponent(p))
-        );
+      c.push(
+        "".concat(encodeURIComponent(h), "=").concat(encodeURIComponent(p))
+      );
   }
   const f = c.join("&");
   const w_rid = CryptoJs.MD5(f + o).toString();
@@ -290,11 +290,11 @@ async function getMediaSource(
 
   const _params = musicItem.bvid
     ? {
-        bvid: musicItem.bvid,
-      }
+      bvid: musicItem.bvid,
+    }
     : {
-        aid: musicItem.aid,
-      };
+      aid: musicItem.aid,
+    };
 
   const res = (
     await axios.get("https://api.bilibili.com/x/player/playurl", {
@@ -529,8 +529,7 @@ module.exports = {
   version: "0.1.12",
   author: "猫头猫",
   cacheControl: "no-cache",
-  srcUrl:
-    "https://gitee.com/maotoumao/MusicFreePlugins/raw/v0.1/dist/bilibili/index.js",
+  srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/bilibili/index.js",
   primaryKey: ["id", "aid", "bvid", "cid"],
   hints: {
     importMusicSheet: [

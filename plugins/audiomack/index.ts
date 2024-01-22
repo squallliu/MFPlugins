@@ -42,8 +42,8 @@ function getNormalizedParams(parameters) {
 function _encode(e) {
   return e
     ? encodeURIComponent(e)
-        .replace(/[!'()]/g, escape)
-        .replace(/\*/g, "%2A")
+      .replace(/[!'()]/g, escape)
+      .replace(/\*/g, "%2A")
     : "";
 }
 
@@ -87,7 +87,7 @@ u.prototype = {
     var n = e || "";
     try {
       ("number" == typeof e || "boolean" == typeof e) && (n = e.toString());
-    } catch (e) {}
+    } catch (e) { }
     return n;
   },
   _addParameter: function (e, n) {
@@ -248,7 +248,7 @@ async function getDataUrlBase() {
   const $ = load(rawHtml);
   const script = $("script#__NEXT_DATA__").text();
   const jsonObj = JSON.parse(script);
-  
+
   if (jsonObj.buildId) {
     dataUrlBase = `https://audiomack.com/_next/data/${jsonObj.buildId}`
   }
@@ -527,9 +527,8 @@ async function getTopLists() {
 // TODO: 支持分页
 async function getTopListDetail(topListItem, page = 1) {
   const type = topListItem.type;
-  const partialUrl = `/music/${
-    topListItem.url_slug ? `${topListItem.url_slug}/` : ""
-  }${type}/page/${page}`;
+  const partialUrl = `/music/${topListItem.url_slug ? `${topListItem.url_slug}/` : ""
+    }${type}/page/${page}`;
   const url = `https://api.audiomack.com/v1${partialUrl}`;
   const params = {
     oauth_consumer_key: "audiomack-js",
@@ -561,8 +560,7 @@ module.exports = {
   version: "0.0.2",
   author: '猫头猫',
   primaryKey: ["id", "url_slug"],
-  srcUrl:
-    "https://gitee.com/maotoumao/MusicFreePlugins/raw/v0.1/dist/audiomack/index.js",
+  srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/audiomack/index.js",
   cacheControl: "no-cache",
   supportedSearchType: ['music', 'album', 'sheet', 'artist'],
   async search(query, page, type) {
