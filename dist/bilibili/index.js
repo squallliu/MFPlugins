@@ -433,7 +433,7 @@ module.exports = {
     version: "0.1.12",
     author: "猫头猫",
     cacheControl: "no-cache",
-    srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/bilibili/index.js",
+    srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MFPlugins/master/dist/bilibili/index.js",
     primaryKey: ["id", "aid", "bvid", "cid"],
     hints: {
         importMusicSheet: [

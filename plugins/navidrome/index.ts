@@ -134,7 +134,7 @@ module.exports = {
   author: '猫头猫',
   appVersion: ">0.1.0-alpha.0",
   srcUrl:
-    "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/navidrome/index.js",
+    "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MFPlugins/master/dist/navidrome/index.js",
   cacheControl: "no-cache",
   userVariables: [
     {

@@ -215,7 +215,7 @@ module.exports = {
   version: "0.0.1",
   supportedSearchType: ["music"],
   srcUrl:
-    "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/youtube/index.js",
+    "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MFPlugins/master/dist/youtube/index.js",
   cacheControl: "no-cache",
   search,
   getMediaSource,

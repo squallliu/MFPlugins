@@ -560,7 +560,7 @@ module.exports = {
   version: "0.0.2",
   author: '猫头猫',
   primaryKey: ["id", "url_slug"],
-  srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MusicFreePlugins/master/dist/audiomack/index.js",
+  srcUrl: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/squallliu/MFPlugins/master/dist/audiomack/index.js",
   cacheControl: "no-cache",
   supportedSearchType: ['music', 'album', 'sheet', 'artist'],
   async search(query, page, type) {
