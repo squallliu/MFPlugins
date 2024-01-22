@@ -98,7 +98,7 @@ function formatAlbumItem(_) {
 }
 
 function musicCanPlayFilter(_) {
-  return (_.fee === 0 || _.fee === 8) && (!_.privilege || _.privilege?.st >= 0);
+  return true; // (_.fee === 0 || _.fee === 8) && (!_.privilege || _.privilege?.st >= 0);
 }
 
 const pageSize = 30;
@@ -377,7 +377,7 @@ async function getValidMusicItems(trackIds) {
       )
     ).data;
     const validMusicItems = songDetails.songs
-      .filter((_) => _.fee === 0 || _.fee === 8)
+      // .filter((_) => _.fee === 0 || _.fee === 8)
       .map(formatMusicItem);
     return validMusicItems;
   } catch (e) {

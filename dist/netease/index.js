@@ -83,8 +83,7 @@ function formatAlbumItem(_) {
     };
 }
 function musicCanPlayFilter(_) {
-    var _a;
-    return (_.fee === 0 || _.fee === 8) && (!_.privilege || ((_a = _.privilege) === null || _a === void 0 ? void 0 : _a.st) >= 0);
+    return true;
 }
 const pageSize = 30;
 async function searchBase(query, page, type) {
@@ -310,7 +309,6 @@ async function getValidMusicItems(trackIds) {
         const validTrackIds = res.data.filter((_) => _.url).map((_) => _.id);
         const songDetails = (await axios_1.default.get(`https://music.163.com/api/song/detail/?id=${validTrackIds[0]}&ids=[${validTrackIds.join(",")}]`, { headers })).data;
         const validMusicItems = songDetails.songs
-            .filter((_) => _.fee === 0 || _.fee === 8)
             .map(formatMusicItem);
         return validMusicItems;
     }
